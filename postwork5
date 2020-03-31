@@ -1,0 +1,29 @@
+$ cd desktop 
+ $ cd cursoBD
+ $ mkdir Sesion05
+ $ ls 
+ $cp  -r Mis_Datos Sesion05
+ CREAR BASE DE DATOS Y COLECCIONES CON EL NOMBRE DE MI PROYECTO 
+ Entrar a MongoDB Compas con la direccion mongodb://root:bedu0583@ec2-54-213-51-169.us-west-2.compute.amazonaws.com:27017/?authSource=admin&connectTimeoutMS=600000
+ Import data_ CSV_ C:\Users\USER\Desktop\Mi_Proyecto\Mis_Datos\USA-Universities.csv
+ 
+Validar que los datos se hayan importado correctamente:
+Documents: 2199
+avg.DocuemnetSze: 344.4B
+totalDocumentSize: 757.2
+NumIndexes:1
+TotalIndexesSize 4.1KB
+
+Revisar si hay documentos vacíos y en caso afirmativo eliminarlos
+
+$SORT {_id: -1}
+
+¿cuántos registros hay de cierto tipo o categoría?
+FILTER: {"country":"USA"}  DISPLAYING DOCUMENTS: 487
+
+¿cuántos registros hay de dos o más categorías?
+FILTER {"country":"USA", "publications": "5"}  DISPLAYING DOCUMENTS: 3
+
+¿cuántos registros hay donde un campo sea mayor, menor o igual a cierto valor?
+
+FILTER {"patents":{$gte": "30"}}
